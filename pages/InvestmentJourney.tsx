@@ -14,7 +14,12 @@ const InvestmentJourney: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-white dark:bg-gray-900 font-display">
+    <div className="flex flex-col h-screen bg-white dark:bg-gray-900 font-display relative">
+      {/* Page Reference */}
+      <div className="absolute top-1 left-0 right-0 flex justify-center pointer-events-none z-[100]">
+        <span className="text-[8px] font-mono text-gray-400/60 uppercase tracking-widest">Screen: Investment Journey</span>
+      </div>
+
       <main className="flex-grow p-6">
         <header className="mb-8">
           <button 
@@ -31,7 +36,7 @@ const InvestmentJourney: React.FC = () => {
           {/* Option 1 */}
           <div 
             onClick={() => toggleSelection('robo')}
-            className={`cursor-pointer flex items-center p-4 border rounded-xl transition-all duration-200 ${selected.includes('robo') ? 'border-unifi-bright bg-lime-50 dark:bg-lime-900/20' : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800'}`}
+            className={`cursor-pointer flex items-center p-4 border-2 rounded-xl transition-all duration-200 ${selected.includes('robo') ? 'border-unifi-bright bg-lime-50 dark:bg-lime-900/20' : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800'}`}
           >
             <div className={`mr-4 p-3 rounded-xl ${selected.includes('robo') ? 'bg-lime-100 dark:bg-lime-900/50' : 'bg-gray-100 dark:bg-gray-700'}`}>
               <span className={`material-symbols-outlined ${selected.includes('robo') ? 'text-unifi-bright' : 'text-gray-400'}`}>attach_money</span>
@@ -48,7 +53,7 @@ const InvestmentJourney: React.FC = () => {
           {/* Option 2 */}
           <div 
             onClick={() => toggleSelection('self')}
-            className={`cursor-pointer flex items-center p-4 border rounded-xl transition-all duration-200 ${selected.includes('self') ? 'border-unifi-bright bg-lime-50 dark:bg-lime-900/20' : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800'}`}
+            className={`cursor-pointer flex items-center p-4 border-2 rounded-xl transition-all duration-200 ${selected.includes('self') ? 'border-unifi-bright bg-lime-50 dark:bg-lime-900/20' : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800'}`}
           >
             <div className={`mr-4 p-3 rounded-xl ${selected.includes('self') ? 'bg-lime-100 dark:bg-lime-900/50' : 'bg-gray-100 dark:bg-gray-700'}`}>
               <span className={`material-symbols-outlined ${selected.includes('self') ? 'text-unifi-bright' : 'text-gray-400'}`}>bar_chart</span>
@@ -81,9 +86,9 @@ const InvestmentJourney: React.FC = () => {
       <footer className="p-6 pt-0 bg-white dark:bg-gray-900 mt-auto">
         <p className="text-center text-sm text-gray-500 dark:text-gray-400 mb-4">You can select multiple options to explore</p>
         <button 
-          onClick={() => navigate('/legal-agreements')}
+          onClick={() => navigate('/account-setup')}
           disabled={selected.length === 0}
-          className={`w-full font-bold py-4 px-4 rounded-xl shadow-md transition-all duration-200 ${selected.length > 0 ? 'bg-unifi-bright text-white hover:bg-opacity-90 hover:-translate-y-0.5' : 'bg-gray-300 dark:bg-gray-700 text-gray-500 cursor-not-allowed'}`}
+          className={`w-full py-4 px-6 rounded-xl font-bold text-base shadow-md transition-all duration-200 active:scale-[0.98] ${selected.length > 0 ? 'bg-unifi-bright text-white hover:bg-opacity-90' : 'bg-gray-300 dark:bg-gray-700 text-gray-500 cursor-not-allowed shadow-none'}`}
         >
           Continue
         </button>

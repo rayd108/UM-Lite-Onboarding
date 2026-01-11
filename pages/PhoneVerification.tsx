@@ -6,7 +6,12 @@ const PhoneVerification: React.FC = () => {
   const [phone, setPhone] = useState('');
 
   return (
-    <div className="flex flex-col h-screen p-6 font-display bg-white dark:bg-gray-900">
+    <div className="flex flex-col h-screen p-6 font-display bg-white dark:bg-gray-900 relative">
+      {/* Page Reference */}
+      <div className="absolute top-1 left-0 right-0 flex justify-center pointer-events-none z-[100]">
+        <span className="text-[8px] font-mono text-gray-400/60 uppercase tracking-widest">Screen: Phone Verification</span>
+      </div>
+
       <main className="flex-grow flex flex-col justify-center">
         <div className="w-full max-w-md mx-auto">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Welcome to Unifimoney</h1>
@@ -43,13 +48,13 @@ const PhoneVerification: React.FC = () => {
         <div className="flex items-center space-x-4">
           <button 
             onClick={() => navigate('/contact-info')}
-            className="flex-grow w-1/2 bg-unifi-green text-white font-bold py-3.5 px-4 rounded-xl text-base shadow-md hover:bg-opacity-90 active:transform active:scale-95 transition-all"
+            className="flex-grow bg-unifi-green text-white font-bold py-4 px-4 rounded-xl text-base shadow-md hover:bg-opacity-90 active:scale-[0.98] transition-all duration-200"
           >
             Update
           </button>
           <button 
             onClick={() => navigate('/contact-info')}
-            className="w-auto bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold py-3.5 px-8 rounded-xl text-base shadow-md hover:opacity-90 active:transform active:scale-95 transition-all"
+            className="px-8 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold py-4 rounded-xl text-base shadow-md hover:opacity-90 active:scale-[0.98] transition-all duration-200"
           >
             No
           </button>

@@ -5,8 +5,13 @@ const ImportantNotice: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-gray-400/50 dark:bg-gray-900/90 font-inter min-h-screen flex items-end sm:items-center justify-center p-4 backdrop-blur-sm">
-      <div className="w-full max-w-lg bg-white dark:bg-gray-900 rounded-xl shadow-2xl overflow-hidden animate-fade-in-up">
+    <div className="bg-gray-400/50 dark:bg-gray-900/90 font-inter min-h-screen flex items-end sm:items-center justify-center p-4 backdrop-blur-sm relative">
+      {/* Page Reference */}
+      <div className="absolute top-1 left-0 right-0 flex justify-center pointer-events-none z-[100]">
+        <span className="text-[8px] font-mono text-gray-500/60 uppercase tracking-widest">Screen: Important Notice</span>
+      </div>
+
+      <div className="w-full max-w-lg bg-white dark:bg-gray-900 rounded-2xl shadow-2xl overflow-hidden animate-fade-in-up">
         <div className="p-6 sm:p-8">
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Unifimoney Important Notice</h1>
           
@@ -34,7 +39,7 @@ const ImportantNotice: React.FC = () => {
         <div className="px-6 py-4 bg-gray-50 dark:bg-gray-800/50 border-t border-gray-100 dark:border-gray-800">
           <button 
             onClick={() => navigate('/phone-verification')}
-            className="w-full px-4 py-3 text-base font-bold text-white bg-unifi-lime rounded-lg shadow-md hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-unifi-lime dark:focus:ring-offset-gray-900 transition-all"
+            className="w-full py-4 px-6 rounded-xl font-bold text-base text-white bg-unifi-lime shadow-md hover:bg-opacity-90 active:scale-[0.98] transition-all duration-200"
           >
             Accept & Continue
           </button>

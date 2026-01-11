@@ -5,7 +5,12 @@ const Dashboard: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-gray-50 dark:bg-gray-900 min-h-screen font-display pb-20">
+    <div className="bg-gray-50 dark:bg-gray-900 min-h-screen font-display pb-20 relative">
+      {/* Page Reference */}
+      <div className="absolute top-1 left-0 right-0 flex justify-center pointer-events-none z-[100]">
+        <span className="text-[8px] font-mono text-white/40 uppercase tracking-widest">Screen: Dashboard</span>
+      </div>
+
       {/* Header Area */}
       <div 
         className="bg-gray-800 text-white relative bg-cover bg-center"
@@ -62,19 +67,19 @@ const Dashboard: React.FC = () => {
       <main className="p-4 space-y-4">
         {/* Quick Actions */}
         <div className="grid grid-cols-4 gap-3 text-center">
-          <button className="bg-garden-action text-gray-800 rounded-xl p-2 flex flex-col items-center justify-center space-y-1 hover:bg-opacity-90 transition">
+          <button className="bg-garden-action text-gray-800 rounded-xl p-2 flex flex-col items-center justify-center space-y-1 hover:bg-opacity-90 transition-all active:scale-95 shadow-sm">
             <span className="material-icons-outlined text-2xl">swap_horiz</span>
             <span className="text-[10px] font-medium">Transfer</span>
           </button>
-          <button className="bg-garden-action text-gray-800 rounded-xl p-2 flex flex-col items-center justify-center space-y-1 hover:bg-opacity-90 transition">
+          <button className="bg-garden-action text-gray-800 rounded-xl p-2 flex flex-col items-center justify-center space-y-1 hover:bg-opacity-90 transition-all active:scale-95 shadow-sm">
             <span className="material-icons-outlined text-2xl">chat_bubble_outline</span>
             <span className="text-[10px] font-medium">Message</span>
           </button>
-          <button className="bg-garden-action text-gray-800 rounded-xl p-2 flex flex-col items-center justify-center space-y-1 hover:bg-opacity-90 transition">
+          <button className="bg-garden-action text-gray-800 rounded-xl p-2 flex flex-col items-center justify-center space-y-1 hover:bg-opacity-90 transition-all active:scale-95 shadow-sm">
             <span className="material-icons-outlined text-2xl">paid</span>
             <span className="text-[10px] font-medium leading-tight">Send money with Zelle®</span>
           </button>
-          <button className="bg-garden-action text-gray-800 rounded-xl p-2 flex flex-col items-center justify-center space-y-1 hover:bg-opacity-90 transition">
+          <button className="bg-garden-action text-gray-800 rounded-xl p-2 flex flex-col items-center justify-center space-y-1 hover:bg-opacity-90 transition-all active:scale-95 shadow-sm">
             <span className="material-icons-outlined text-2xl">description</span>
             <span className="text-[10px] font-medium">e-statements</span>
           </button>
@@ -98,7 +103,10 @@ const Dashboard: React.FC = () => {
               <p className="mt-3 text-sm opacity-90 leading-relaxed max-w-[80%]">
                 Add funds to your Unifimoney account to start investing in Stocks, ETFs, Crypto, Metals and more.
               </p>
-              <button className="bg-cyan-300/80 hover:bg-cyan-300 text-cyan-900 font-bold text-sm py-2 px-6 rounded-full mt-5 transition-colors">
+              <button 
+                onClick={() => navigate('/notice')}
+                className="bg-cyan-300/80 hover:bg-cyan-300 text-cyan-900 font-bold text-sm py-2 px-6 rounded-xl mt-5 transition-all active:scale-95 shadow-md"
+              >
                 COMPLETE
               </button>
             </div>
@@ -118,7 +126,7 @@ const Dashboard: React.FC = () => {
           <div className="border-t border-gray-100 dark:border-gray-700 p-4">
             <button 
               onClick={() => navigate('/notice')}
-              className="w-full text-garden-primary font-bold py-3 rounded-full border border-garden-primary hover:bg-garden-primary hover:text-white transition-colors uppercase tracking-wide text-sm"
+              className="w-full text-garden-primary font-bold py-4 rounded-xl border-2 border-garden-primary hover:bg-garden-primary hover:text-white transition-all active:scale-[0.98] uppercase tracking-wide text-sm shadow-sm"
             >
               Go to Unifimoney
             </button>
@@ -127,17 +135,17 @@ const Dashboard: React.FC = () => {
 
         {/* Garden Bottom Nav Area */}
         <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 text-center shadow-sm">
-          <p className="text-3xl font-thin tracking-[0.2em] text-gray-800 dark:text-white">GARDEN</p>
+          <p className="text-3xl font-thin tracking-[0.2em] text-gray-800 dark:text-white uppercase">Garden</p>
           <div className="flex justify-around mt-6 pt-6 border-t border-gray-100 dark:border-gray-700">
-            <div className="flex flex-col items-center space-y-1 cursor-pointer hover:opacity-80">
+            <div className="flex flex-col items-center space-y-1 cursor-pointer hover:opacity-80 transition-opacity">
               <span className="material-icons-outlined text-garden-primary">call</span>
               <span className="text-xs font-semibold text-garden-primary">Call</span>
             </div>
-            <div className="flex flex-col items-center space-y-1 cursor-pointer hover:opacity-80">
+            <div className="flex flex-col items-center space-y-1 cursor-pointer hover:opacity-80 transition-opacity">
               <span className="material-icons-outlined text-garden-primary">chat_bubble_outline</span>
               <span className="text-xs font-semibold text-garden-primary">Message</span>
             </div>
-            <div className="flex flex-col items-center space-y-1 cursor-pointer hover:opacity-80">
+            <div className="flex flex-col items-center space-y-1 cursor-pointer hover:opacity-80 transition-opacity">
               <span className="material-icons-outlined text-garden-primary">info</span>
               <span className="text-xs font-semibold text-garden-primary">Info</span>
             </div>

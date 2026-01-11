@@ -5,7 +5,12 @@ const PersonalDetails: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-white dark:bg-gray-900 font-display min-h-screen flex flex-col">
+    <div className="bg-white dark:bg-gray-900 font-display min-h-screen flex flex-col relative">
+      {/* Page Reference */}
+      <div className="absolute top-1 left-0 right-0 flex justify-center pointer-events-none z-[100]">
+        <span className="text-[8px] font-mono text-gray-400/60 uppercase tracking-widest">Screen: Personal Details</span>
+      </div>
+
       <main className="flex-grow p-6">
         <header className="mb-8">
             <button 
@@ -80,7 +85,7 @@ const PersonalDetails: React.FC = () => {
         <p className="text-xs text-gray-500 dark:text-gray-400 mb-4 px-4">Your information is encrypted and secure. We adhere to strict privacy policies.</p>
         <button 
           onClick={() => navigate('/investment-journey')}
-          className="w-full bg-unifi-light text-gray-900 font-bold py-4 px-4 rounded-xl hover:bg-opacity-90 active:scale-[0.98] transition-all duration-200 shadow-md"
+          className="w-full bg-unifi-light text-gray-900 font-bold py-4 px-6 rounded-xl shadow-md hover:bg-opacity-90 active:scale-[0.98] transition-all duration-200 text-base"
         >
           Continue
         </button>

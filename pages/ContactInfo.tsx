@@ -5,7 +5,12 @@ const ContactInfo: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-white dark:bg-gray-900 font-inter text-gray-900 dark:text-gray-100 min-h-screen flex flex-col p-6">
+    <div className="bg-white dark:bg-gray-900 font-inter text-gray-900 dark:text-gray-100 min-h-screen flex flex-col p-6 relative">
+      {/* Page Reference */}
+      <div className="absolute top-1 left-0 right-0 flex justify-center pointer-events-none z-[100]">
+        <span className="text-[8px] font-mono text-gray-400/60 uppercase tracking-widest">Screen: Contact Info</span>
+      </div>
+
       <header>
         <button 
           onClick={() => navigate(-1)}
@@ -62,7 +67,7 @@ const ContactInfo: React.FC = () => {
       <footer className="mt-auto pt-6">
         <button 
           onClick={() => navigate('/personal-details')}
-          className="w-full bg-unifi-sage text-white font-bold py-4 px-4 rounded-xl shadow-lg hover:bg-opacity-90 active:scale-[0.98] transition-all duration-200"
+          className="w-full bg-unifi-sage text-white font-bold py-4 px-6 rounded-xl shadow-md hover:bg-opacity-90 active:scale-[0.98] transition-all duration-200 text-base"
         >
           Continue
         </button>
